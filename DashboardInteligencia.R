@@ -1,7 +1,7 @@
 
 
 #Prepara os dados
-#source('PreparoDadosInteligencia.R')
+source('PreparoDadosInteligencia.R')
 
 #UI
   estilo <- tags$head(tags$style(HTML(".shiny-output-error-validation {color: black;font-size: 30px; text-align: center; font-weight: bold;}")))
