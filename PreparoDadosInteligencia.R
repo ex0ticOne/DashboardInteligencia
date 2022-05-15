@@ -15,12 +15,11 @@ options(scipen = 999999)
 DADOS_UF_MES_CIA <- read_delim("SES_UF2.csv", delim = ";", 
                     escape_double = FALSE, trim_ws = TRUE)
 
+DADOS_UF_MES_CIA$UF <- toupper(DADOS_UF_MES_CIA$UF)
+
 DADOS_RAMOS <- read_delim("NOMES_RAMOS.CSV", 
                           delim = ",", escape_double = FALSE, 
                         trim_ws = TRUE)
-
-DADOS_UF_MES_CIA$UF <- toupper(DADOS_UF_MES_CIA$UF)
-DADOS_UF_MES_CIA$ramos <- as.numeric(DADOS_UF_MES_CIA$ramos)
 
 DADOS_RAMOS$coramo <- as.numeric(DADOS_RAMOS$coramo)
 

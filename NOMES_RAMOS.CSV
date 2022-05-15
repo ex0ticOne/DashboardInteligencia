@@ -1,155 +1,155 @@
-"coramo","nome_ramo"
-1101,"Seguro Agrícola sem cob. do FESR"
-1601,"Microsseguros de Pessoas"
-2201,"Sobrevivência de Assistido"
-1102,"Seguro Agrícola com cob. do FESR"
-1602,"Microsseguros de Danos"
-2202,"Fluxo Biométrico"
-1103,"Seguro Pecuário sem cob. do FESR"
-1603,"Microsseguros - Previdência"
-2203,"Índice Biométrico"
-1104,"Seguro Pecuário com cob. do FESR"
-1105,"Seguro Aquícola sem cob. do FESR"
-1106,"Seguro Aquícola com cob. do FESR"
-1107,"Seguro Florestas sem cob. do FESR"
-1108,"Seguro Florestas com cob. do FESR"
-1109,"Seguro da Cédula do Produto Rural"
-310,"R.C.Administradores e Diretores-D&O"
-111,"Incêndio Tradicional"
-711,"Riscos Diversos Financeiros"
-112,"Assistência - Bens em Geral"
-113,"Vidros"
-313,"R. C. Riscos Ambientais"
-114,"Compreensivo Residencial"
-115,"Roubo"
-116,"Compreensivo Condomínio"
-117,"Tumultos"
-1417,"Seg. Compreensivo Oper. Portuários"
-118,"Compreensivo Empresarial"
-819,"Crédito à Exp. Risco Comercial"
-520,"Acidentes Pessoais Passageiros-APP"
-621,"Transporte Nacional"
-622,"Transporte Internacional"
-523,"RC T. Rod. Interest. e Internac."
-623,"RCTR-P Interestadual/Internacional"
-524,"Garantia Est./ Exten. GarantiaAuto"
-525,"Carta Verde"
-526,"Seguro Popular de Automóvel Usado"
-327,"Compreensivo Riscos Cibernéticos"
-627,"Resp. Civil do Transp. Intermodal"
-628,"RCTR-P Municipal/Intermunicipal"
-1128,"Pecuário"
-1428,"R. C. Facult. para Embarcações-RCF"
-1528,"R. C. Facult. para Aeronaves - RCF"
-929,"Funeral"
-1129,"Aquícola"
-1329,"Funeral"
-1130,"Seguro Benf. e Prod. Agropecuários"
-531,"Automóvel - Casco"
-632,"R.C.Trans.Carga Viag.Int.-RCTR-VI-C"
-433,"Marítimos"
-1433,"Marítimos (Cascos)"
-234,"Riscos de Petróleo"
-1734,"Riscos de Petróleo"
-435,"Aeronáuticos"
-1535,"Aeronáuticos (cascos)"
-936,"Perda Certif. Habilit. de Vôo-PCHV"
-1336,"Perda Certif. Habilit. de Vôo-PCHV"
-437,"Responsabilidade Civil Hangar"
-1537,"Responsabilidade Civil Hangar"
-638,"R.C.Trans. Ferroviário CargaRCTF-C"
-739,"Garantia Financeira"
-740,"Garantia de Obrigações Privadas"
-141,"Lucros Cessantes"
-142,"Lucros Cessantes Cobertura Simples"
-542,"Assistência e Outras Cobert. - Auto"
-143,"Fidelidade"
-743,"Stop Loss"
-544,"R.C.T.Viagem Intern-Pes Trans ou ñ"
-644,"R.C. Viag.Int. Pessoas - Carta Azul"
-745,"Garantia de Obrigações Públicas"
-746,"Fiança Locatícia"
-747,"Garantia de Concessões Públicas"
-748,"Crédito Interno"
-848,"Crédito Interno"
-749,"Crédito à Exportação"
-849,"Crédito à Exportação"
-949,"Crédito à Exportação"
-750,"Garantia Judicial"
-351,"R. C. Geral"
-652,"R. C. Trans. Aéreo Carga - RCTA-C"
-553,"R. C. Facultativa Veículos - RCFV"
-654,"R.C. Trans. Rodoviário CargaRCTR-C"
-655,"R.C. Trans. Desvio de CargaRCF-DC"
-656,"R.C. Trans. Aquaviário CargaRCA-C"
-457,"DPEM"
-1457,"DPEM"
-658,"R.C.Operador Transp. Multi.-RCOTM-C"
-859,"Crédito à Exportação Risco Político"
-860,"Crédito Doméstico Risco Comercial"
-1061,"Seg.Habit.Apól. Merc. - Prestamista"
-1161,"Agrícola"
-1162,"Penhor Rural"
-1163,"Penhor Rural Instit. Fin. Pub."
-1164,"Seguros Animais"
-1065,"Seg.Habit.Apól.Merc.-Demais Cobert."
-1165,"Compreensivo de Florestas"
-1066,"Seg.Habit.Sist.Financ. da Habitação"
-167,"Riscos de Engenharia"
-1068,"Habitacional - Fora do SFH"
-969," Viagem"
-1369,"Viagem"
-870,"Crédito Doméstico Risco P.Física"
-171,"Riscos Diversos"
-272,"Riscos Nucleares"
-1872,"Riscos Nucleares"
-173,"Global de Bancos"
-274,"Satélites"
-1574,"Satélites"
-775,"Garantia Segurado - Setor Público"
-176,"Riscos Diversos - Planos Conjugados"
-776,"Garantia Segurado - Setor Privado"
-977,"Prestamista (exceto Habit e Rural)"
-1377,"Prestamista (exceto Habit. E Rural)"
-378,"R. C.  Profissional"
-1279,"Seguros no Exterior"
-2079,"Aceitação no Exterior"
-980," Educacional"
-1380,"Educacional"
-981,"Acidentes Pessoais - Individual"
-1381,"Acidentes Pessoais"
-982,"Acidentes Pessoais"
-583,"DPVAT Extinto"
-983," Dotal Misto"
-1383,"Dotal Misto"
-484,"Aeronáuticos - Bilhete"
-984," Doenças Graves ou Doença Terminal"
-1384,"Doenças Graves ou Doença Terminal"
-1285,"Saúde - Ressegurador Local"
-1985,"Saúde"
-986," Dotal Puro"
-1286,"Saúde Individual"
-1386,"Dotal Puro"
-987,"Desemprego/Perda de Renda"
-1287,"Saúde Grupal"
-1387,"Desemprego/Perda de Renda"
-588,"DPVAT"
-589,"DPVAT Run Off"
-990," Eventos Aleatórios"
-1390,"Eventos Aleatórios"
-991," Vida"
-1391,"Vida"
-992,"VGBL/VAGP/VRGP/VRSA/PRI  individual"
-1392,"VGBL/VAGP/VRGP/VRSA/VRI"
-993,"Vida em Grupo"
-2293,"VIDA EFPC"
-994,"VGBL/VAGP/VRGP/VRSA/VRI"
-195,"Garantia Est./Ext.Gar-Bens em Geral"
-196,"Riscos Nomeados e Operacionais"
-996,"Seguro de Vida Universal"
-1396,"Seguro de Vida Universal"
-997,"VG/APC"
-1597,"Resp. Explor. ou Transp. Aéreo-RETA"
-1198,"Seguro de Vida do Produtor Rural"
-1299,"SUCURSAIS NO EXTERIOR"
-2199,"SUCURSAL NO EXTERIOR"
+coramo,nome_ramo
+1101,Seguro Agrícola sem cob. do FESR
+1601,Microsseguros de Pessoas
+2201,Sobrevivência de Assistido
+1102,Seguro Agrícola com cob. do FESR
+1602,Microsseguros de Danos
+2202,Fluxo Biométrico
+1103,Seguro Pecuário sem cob. do FESR
+1603,Microsseguros - Previdência
+2203,Índice Biométrico
+1104,Seguro Pecuário com cob. do FESR
+1105,Seguro Aquícola sem cob. do FESR
+1106,Seguro Aquícola com cob. do FESR
+1107,Seguro Florestas sem cob. do FESR
+1108,Seguro Florestas com cob. do FESR
+1109,Seguro da Cédula do Produto Rural
+310,R.C.Administradores e Diretores-D&O
+111,Incêndio Tradicional
+711,Riscos Diversos Financeiros
+112,Assistência - Bens em Geral
+113,Vidros
+313,R. C. Riscos Ambientais
+114,Compreensivo Residencial
+115,Roubo
+116,Compreensivo Condomínio
+117,Tumultos
+1417,Seg. Compreensivo Oper. Portuários
+118,Compreensivo Empresarial
+819,Crédito à Exp. Risco Comercial
+520,Acidentes Pessoais Passageiros-APP
+621,Transporte Nacional
+622,Transporte Internacional
+523,RC T. Rod. Interest. e Internac.
+623,RCTR-P Interestadual/Internacional
+524,Garantia Est./ Exten. GarantiaAuto
+525,Carta Verde
+526,Seguro Popular de Automóvel Usado
+327,Compreensivo Riscos Cibernéticos
+627,Resp. Civil do Transp. Intermodal
+628,RCTR-P Municipal/Intermunicipal
+1128,Pecuário
+1428,R. C. Facult. para Embarcações-RCF
+1528,R. C. Facult. para Aeronaves - RCF
+929,Funeral
+1129,Aquícola
+1329,Funeral
+1130,Seguro Benf. e Prod. Agropecuários
+531,Automóvel - Casco
+632,R.C.Trans.Carga Viag.Int.-RCTR-VI-C
+433,Marítimos
+1433,Marítimos (Cascos)
+234,Riscos de Petróleo
+1734,Riscos de Petróleo
+435,Aeronáuticos
+1535,Aeronáuticos (cascos)
+936,Perda Certif. Habilit. de Vôo-PCHV
+1336,Perda Certif. Habilit. de Vôo-PCHV
+437,Responsabilidade Civil Hangar
+1537,Responsabilidade Civil Hangar
+638,R.C.Trans. Ferroviário CargaRCTF-C
+739,Garantia Financeira
+740,Garantia de Obrigações Privadas
+141,Lucros Cessantes
+142,Lucros Cessantes Cobertura Simples
+542,Assistência e Outras Cobert. - Auto
+143,Fidelidade
+743,Stop Loss
+544,R.C.T.Viagem Intern-Pes Trans ou ñ
+644,R.C. Viag.Int. Pessoas - Carta Azul
+745,Garantia de Obrigações Públicas
+746,Fiança Locatícia
+747,Garantia de Concessões Públicas
+748,Crédito Interno
+848,Crédito Interno
+749,Crédito à Exportação
+849,Crédito à Exportação
+949,Crédito à Exportação
+750,Garantia Judicial
+351,R. C. Geral
+652,R. C. Trans. Aéreo Carga - RCTA-C
+553,R. C. Facultativa Veículos - RCFV
+654,R.C. Trans. Rodoviário CargaRCTR-C
+655,R.C. Trans. Desvio de CargaRCF-DC
+656,R.C. Trans. Aquaviário CargaRCA-C
+457,DPEM
+1457,DPEM
+658,R.C.Operador Transp. Multi.-RCOTM-C
+859,Crédito à Exportação Risco Político
+860,Crédito Doméstico Risco Comercial
+1061,Seg.Habit.Apól. Merc. - Prestamista
+1161,Agrícola
+1162,Penhor Rural
+1163,Penhor Rural Instit. Fin. Pub.
+1164,Seguros Animais
+1065,Seg.Habit.Apól.Merc.-Demais Cobert.
+1165,Compreensivo de Florestas
+1066,Seg.Habit.Sist.Financ. da Habitação
+167,Riscos de Engenharia
+1068,Habitacional - Fora do SFH
+969, Viagem
+1369,Viagem
+870,Crédito Doméstico Risco P.Física
+171,Riscos Diversos
+272,Riscos Nucleares
+1872,Riscos Nucleares
+173,Global de Bancos
+274,Satélites
+1574,Satélites
+775,Garantia Segurado - Setor Público
+176,Riscos Diversos - Planos Conjugados
+776,Garantia Segurado - Setor Privado
+977,Prestamista (exceto Habit e Rural)
+1377,Prestamista (exceto Habit. E Rural)
+378,R. C.  Profissional
+1279,Seguros no Exterior
+2079,Aceitação no Exterior
+980, Educacional
+1380,Educacional
+981,Acidentes Pessoais - Individual
+1381,Acidentes Pessoais
+982,Acidentes Pessoais
+583,DPVAT Extinto
+983, Dotal Misto
+1383,Dotal Misto
+484,Aeronáuticos - Bilhete
+984, Doenças Graves ou Doença Terminal
+1384,Doenças Graves ou Doença Terminal
+1285,Saúde - Ressegurador Local
+1985,Saúde
+986, Dotal Puro
+1286,Saúde Individual
+1386,Dotal Puro
+987,Desemprego/Perda de Renda
+1287,Saúde Grupal
+1387,Desemprego/Perda de Renda
+588,DPVAT
+589,DPVAT Run Off
+990, Eventos Aleatórios
+1390,Eventos Aleatórios
+991, Vida
+1391,Vida
+992,VGBL/VAGP/VRGP/VRSA/PRI  individual
+1392,VGBL/VAGP/VRGP/VRSA/VRI
+993,Vida em Grupo
+2293,VIDA EFPC
+994,VGBL/VAGP/VRGP/VRSA/VRI
+195,Garantia Est./Ext.Gar-Bens em Geral
+196,Riscos Nomeados e Operacionais
+996,Seguro de Vida Universal
+1396,Seguro de Vida Universal
+997,VG/APC
+1597,Resp. Explor. ou Transp. Aéreo-RETA
+1198,Seguro de Vida do Produtor Rural
+1299,SUCURSAIS NO EXTERIOR
+2199,SUCURSAL NO EXTERIOR
