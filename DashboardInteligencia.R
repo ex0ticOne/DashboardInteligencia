@@ -11,11 +11,14 @@ source('PreparoDadosInteligencia.R')
   lateral <- dashboardSidebar(
     sidebarMenu(uiOutput("selecao_ramo"), 
                 uiOutput("selecao_UF"), 
-                menuItem("Projeções de Sinistralidade", 
+                menuItem("Sinistralidade", 
                   menuSubItem("Nacional", tabName = "PROJECOES_NACIONAL"),
                   menuSubItem("Por UF", tabName = "PROJECOES_UF"), startExpanded = TRUE),
                 menuItem("Abertura de Corretoras por UF", tabName = "ABERTURA_CORRETORAS_UF"),
-                menuItem("Projeções Acionamento Seguro Auto por UF", tabName = "ACIONAMENTO_SEGURO_AUTO_UF")))
+                menuItem("Acionamento de Seguro Auto", 
+                  uiOutput("selecao_cobertura"),
+                  menuSubItem("Por UF", tabName = "ACIONAMENTO_SEGURO_AUTO_UF"), 
+                  menuSubItem("Por Região de tarifação", tabName = "ACIONAMENTO_SEGURO_AUTO_REGIAO"), startExpanded = TRUE)))
 
   corpo <- dashboardBody(estilo,
             tabItems( 
@@ -26,7 +29,9 @@ source('PreparoDadosInteligencia.R')
               tabItem(tabName = "ABERTURA_CORRETORAS_UF", 
                        htmlOutput("PLOT_ABERTURA_CORRETORAS_UF")),
               tabItem(tabName = "ACIONAMENTO_SEGURO_AUTO_UF", 
-                       htmlOutput("PLOT_ACIONAMENTO_SEGURO_AUTO_UF"))
+                       htmlOutput("PLOT_ACIONAMENTO_SEGURO_AUTO_UF")),
+              tabItem(tabName = "ACIONAMENTO_SEGURO_AUTO_REGIAO", 
+                       htmlOutput("PLOT_ACIONAMENTO_SEGURO_AUTO_REGIAO"))
               )
             ) 
         
@@ -38,6 +43,8 @@ server <- function(input, output) {
   output$selecao_ramo <- renderUI(selectInput("selecao_ramo", label = "Selecione o ramo", choices = lista_ramos, selected = "Automóvel - Casco"))
   
   output$selecao_UF <- renderUI(selectInput("selecao_UF", label = "Selecione a UF", choices = lista_UF))
+  
+  output$selecao_cobertura <- renderUI(selectInput("selecao_cobertura", label = "Selecione a Cobertura", choices = c("APP", "CASCO", "RCDM", "RCDP")))
   
   output$PLOT_PROJECAO_NACIONAL <- renderUI(tags$iframe(seamless = "seamless", 
                                                         src = paste0("PROJECOES/RESULTADOS_NACIONAL/Projeção de Sinistralidade - ", input$selecao_ramo, " - Nacional.html"), 
@@ -56,10 +63,14 @@ server <- function(input, output) {
                                                   height = "600"))
   
   output$PLOT_ACIONAMENTO_SEGURO_AUTO_UF <- renderUI(tags$iframe(seamless = "seamless", 
-                                                  src = paste0("ACIONAMENTO_AUTO/Projeção de Quantidade de Sinistros Seguro Auto - ", input$selecao_UF, " - TOTAL.html"), 
+                                                  src = paste0("ACIONAMENTO_AUTO/UF/", input$selecao_cobertura, "/Projeção de Quantidade de Sinistros Seguro Auto - ", input$selecao_UF, " - ", input$selecao_cobertura, ".html"), 
                                                   width = "100%", 
                                                   height = "600"))
   
+  output$PLOT_ACIONAMENTO_SEGURO_AUTO_REGIAO <- renderUI(tags$iframe(seamless = "seamless", 
+                                                                 src = paste0("ACIONAMENTO_AUTO/REGIAO/", input$selecao_cobertura, "/Projeção de Quantidade de Sinistros Seguro Auto - ", input$selecao_UF, " - ", input$selecao_cobertura, ".html"), 
+                                                                 width = "100%", 
+                                                                 height = "600"))
     
   }
 
