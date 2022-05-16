@@ -9,17 +9,20 @@ source('PreparoDadosInteligencia.R')
   cabecalho <- dashboardHeader(title = "Dashboard de Inteligência em Sinistros", titleWidth = "500")
 
   lateral <- dashboardSidebar(
-    sidebarMenu(uiOutput("selecao_ramo"), 
-                uiOutput("selecao_UF"), 
-                menuItem("Sinistralidade", 
+    sidebarMenu(menuItem("Sinistralidade",
+                  uiOutput("selecao_ramo"),
                   menuSubItem("Nacional", tabName = "PROJECOES_NACIONAL"),
+                  uiOutput("selecao_UF_sinistralidade"),
                   menuSubItem("Por UF", tabName = "PROJECOES_UF"), startExpanded = TRUE),
-                menuItem("Abertura de Corretoras por UF", tabName = "ABERTURA_CORRETORAS_UF"),
-                menuItem("Acionamento de Seguro Auto", 
+                menuItem("Abertura de Corretoras", 
+                        uiOutput("selecao_UF_corretoras"),
+                        menuSubItem("Por UF", tabName = "ABERTURA_CORRETORAS_UF"), startExpanded = FALSE),
+                menuItem("Acionamento de Seguro Auto",
                   uiOutput("selecao_cobertura"),
+                  uiOutput("selecao_UF_seguroauto"),
                   menuSubItem("Por UF", tabName = "ACIONAMENTO_SEGURO_AUTO_UF"), 
                   uiOutput("selecao_regiaotarifaria"),
-                  menuSubItem("Por Região de tarifação", tabName = "ACIONAMENTO_SEGURO_AUTO_REGIAO"), startExpanded = TRUE)))
+                  menuSubItem("Por Região de tarifação", tabName = "ACIONAMENTO_SEGURO_AUTO_REGIAO"), startExpanded = FALSE)))
 
   corpo <- dashboardBody(estilo,
             tabItems( 
@@ -43,7 +46,11 @@ server <- function(input, output) {
 
   output$selecao_ramo <- renderUI(selectInput("selecao_ramo", label = "Selecione o ramo", choices = lista_ramos, selected = "Automóvel - Casco"))
   
-  output$selecao_UF <- renderUI(selectInput("selecao_UF", label = "Selecione a UF", choices = lista_UF))
+  output$selecao_UF_sinistralidade <- renderUI(selectInput("selecao_UF_sinistralidade", label = "Selecione a UF", choices = lista_UF))
+  
+  output$selecao_UF_seguroauto <- renderUI(selectInput("selecao_UF_seguroauto", label = "Selecione a UF", choices = lista_UF))
+  
+  output$selecao_UF_corretoras <- renderUI(selectInput("selecao_UF_corretoras", label = "Selecione a UF", choices = lista_UF))
   
   output$selecao_regiaotarifaria <- renderUI(selectInput("selecao_regiaotarifaria", label = "Selecione a Região", choices = lista_regioes))
   
@@ -56,17 +63,17 @@ server <- function(input, output) {
   
   
   output$PLOT_PROJECAO_UF <- renderUI(tags$iframe(seamless = "seamless", 
-                                          src = paste0("PROJECOES/RESULTADOS_UF/Projeção de Sinistralidade - ", input$selecao_ramo, " - ", input$selecao_UF, ".html"), 
+                                          src = paste0("PROJECOES/RESULTADOS_UF/Projeção de Sinistralidade - ", input$selecao_ramo, " - ", input$selecao_UF_sinistralidade, ".html"), 
                                           width = "100%", 
                                           height = "600"))
   
   output$PLOT_ABERTURA_CORRETORAS_UF <- renderUI(tags$iframe(seamless = "seamless", 
-                                                  src = paste0("ABERTURA_CORRETORAS/Projeção de Abertura de Corretoras - ", input$selecao_UF, ".html"), 
+                                                  src = paste0("ABERTURA_CORRETORAS/Projeção de Abertura de Corretoras - ", input$selecao_UF_corretoras, ".html"), 
                                                   width = "100%", 
                                                   height = "600"))
   
   output$PLOT_ACIONAMENTO_SEGURO_AUTO_UF <- renderUI(tags$iframe(seamless = "seamless", 
-                                                  src = paste0("ACIONAMENTO_AUTO/UF/", input$selecao_cobertura, "/Projeção de Quantidade de Sinistros Seguro Auto - ", input$selecao_UF, " - ", input$selecao_cobertura, ".html"), 
+                                                  src = paste0("ACIONAMENTO_AUTO/UF/", input$selecao_cobertura, "/Projeção de Quantidade de Sinistros Seguro Auto - ", input$selecao_UF_seguroauto, " - ", input$selecao_cobertura, ".html"), 
                                                   width = "100%", 
                                                   height = "600"))
   
