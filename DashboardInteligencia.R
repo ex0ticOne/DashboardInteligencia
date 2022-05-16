@@ -11,9 +11,9 @@ source('PreparoDadosInteligencia.R')
   lateral <- dashboardSidebar(
     sidebarMenu(uiOutput("selecao_ramo"), 
                 uiOutput("selecao_UF"), 
-                menuItem("Sinistralidade", 
-                  menuSubItem("Projeções Brasil", tabName = "PROJECOES_NACIONAL"),
-                  menuSubItem("Projeções por UF", tabName = "PROJECOES_UF"), startExpanded = TRUE),
+                menuItem("Projeções de Sinistralidade", 
+                  menuSubItem("Nacional", tabName = "PROJECOES_NACIONAL"),
+                  menuSubItem("Por UF", tabName = "PROJECOES_UF"), startExpanded = TRUE),
                 menuItem("Abertura de Corretoras por UF", tabName = "ABERTURA_CORRETORAS_UF"),
                 menuItem("Projeções Acionamento Seguro Auto por UF", tabName = "ACIONAMENTO_SEGURO_AUTO_UF")))
 
