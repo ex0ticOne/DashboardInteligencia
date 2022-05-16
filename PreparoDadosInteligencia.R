@@ -14,6 +14,10 @@ DADOS_RAMOS <- read_delim("NOMES_RAMOS.CSV",
                           delim = ",", escape_double = FALSE, 
                         trim_ws = TRUE)
 
+DADOS_REGIOES <- read_delim("regioes_tarifacao.csv", 
+                            delim = ",", escape_double = FALSE, 
+                            trim_ws = TRUE)
+
 DADOS_RAMOS$coramo <- as.numeric(DADOS_RAMOS$coramo)
 
 lista_ramos <- data.frame(table(DADOS_RAMOS$nome_ramo))
@@ -25,4 +29,6 @@ lista_UF <- as.factor(c("AC", "AL", "AM", "BA", "CE",
                       "PI", "PR", "RJ", "RN", "RO",
                       "RR","RS", "SC", "SE", "SP", 
                       "TO"))
+
+lista_regioes <- as.factor(DADOS_REGIOES$regiao)
 

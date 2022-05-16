@@ -18,6 +18,7 @@ source('PreparoDadosInteligencia.R')
                 menuItem("Acionamento de Seguro Auto", 
                   uiOutput("selecao_cobertura"),
                   menuSubItem("Por UF", tabName = "ACIONAMENTO_SEGURO_AUTO_UF"), 
+                  uiOutput("selecao_regiaotarifaria"),
                   menuSubItem("Por Região de tarifação", tabName = "ACIONAMENTO_SEGURO_AUTO_REGIAO"), startExpanded = TRUE)))
 
   corpo <- dashboardBody(estilo,
@@ -44,6 +45,8 @@ server <- function(input, output) {
   
   output$selecao_UF <- renderUI(selectInput("selecao_UF", label = "Selecione a UF", choices = lista_UF))
   
+  output$selecao_regiaotarifaria <- renderUI(selectInput("selecao_regiaotarifaria", label = "Selecione a Região", choices = lista_regioes))
+  
   output$selecao_cobertura <- renderUI(selectInput("selecao_cobertura", label = "Selecione a Cobertura", choices = c("APP", "CASCO", "RCDM", "RCDP")))
   
   output$PLOT_PROJECAO_NACIONAL <- renderUI(tags$iframe(seamless = "seamless", 
@@ -68,7 +71,7 @@ server <- function(input, output) {
                                                   height = "600"))
   
   output$PLOT_ACIONAMENTO_SEGURO_AUTO_REGIAO <- renderUI(tags$iframe(seamless = "seamless", 
-                                                                 src = paste0("ACIONAMENTO_AUTO/REGIAO/", input$selecao_cobertura, "/Projeção de Quantidade de Sinistros Seguro Auto - ", input$selecao_UF, " - ", input$selecao_cobertura, ".html"), 
+                                                                 src = paste0("ACIONAMENTO_AUTO/REGIAO/", input$selecao_cobertura, "/Projeção de Quantidade de Sinistros Seguro Auto - ", input$selecao_regiaotarifaria, " - ", input$selecao_cobertura, ".html"), 
                                                                  width = "100%", 
                                                                  height = "600"))
     
