@@ -30,6 +30,14 @@ COMENTARIOS_CLASSIFICADOS <- read_delim("www/CLASSIFICADOR_NPS/comentarios_class
                                         delim = ",", escape_double = FALSE, 
                                         trim_ws = TRUE)
 
+RESUMO_CLASSIFICACAO <- read_delim("www/CLASSIFICADOR_NPS/resumo_compilados.csv", 
+                                   delim = ",", escape_double = FALSE, 
+                                   trim_ws = TRUE)
+
+RESUMO_FREQUENCIA <- read_delim("www/CLASSIFICADOR_NPS/resumo_frequencia.csv", 
+                                   delim = ",", escape_double = FALSE, 
+                                   trim_ws = TRUE)
+
 lista_corretoras <- as.factor(NOMES_CORRETORAS$nome_corretora)
 
 TOP10_INADIMPLENTES_CLIENTES <- SCORE_INADIMPLENCIA %>% 

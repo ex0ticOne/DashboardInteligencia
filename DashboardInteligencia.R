@@ -30,7 +30,8 @@ source('PreparoDadosInteligencia.R')
                          menuSubItem("Clientes atuais", tabName = "SCORE_INADIMPLENTES_INTERNO"),
                          menuSubItem("No mercado", tabName = "SCORE_INADIMPLENTES_EXTERNO"), startExpanded = FALSE),
                 menuItem("Sentimento do Segurado", 
-                         menuSubItem("Resultados em lista", tabName = "DADOS_COMENTARIOS_CLASSIFICADOS"))))
+                         menuSubItem("Resultados em lista", tabName = "DADOS_COMENTARIOS_CLASSIFICADOS"),
+                         menuSubItem("Resumo Compilado", tabName = "RESUMO_CLASSIFICACAO"))))
 
   corpo <- dashboardBody(estilo,
             tabItems(
@@ -62,7 +63,11 @@ source('PreparoDadosInteligencia.R')
                       box(dataTableOutput("DADOS_COMENTARIOS_CLASSIFICADOS"), 
                           title = "Qual o sentimento do segurado atendido pela Regula Sinistros?", 
                           solidHeader = TRUE, 
-                          width = "100%"))
+                          width = "100%")),
+              tabItem(tabName = "RESUMO_CLASSIFICACAO", 
+                      plotOutput("PLOT_RESUMO_CLASSIFICACAO", 
+                                 width = "100%", 
+                                 height = "600"))
               )
             ) 
         
@@ -115,6 +120,21 @@ server <- function(input, output) {
                                                          src = paste0("CONSUMO_CORRETORAS/Projeção de Uso de Tickets - ", input$selecao_corretora, " - Mensal" , ".html"), 
                                                          width = "100%", 
                                                          height = "600"))
+  
+  output$PLOT_RESUMO_CLASSIFICACAO <- renderPlot(RESUMO_CLASSIFICACAO %>% 
+                                                         ggplot(aes(x = Resultado, y = Percentual, fill = Resultado)) + 
+                                                         geom_bar(stat = "identity") + 
+                                                         theme_classic() + 
+                                                         scale_fill_manual(values = c('Muito Negativa' = "darkred",
+                                                                                      'Muito Positiva' = "forestgreen",
+                                                                                      'Negativa' = "red",
+                                                                                      'Neutro' = "yellow",
+                                                                                      'Positiva' = "lightgreen",
+                                                                                      'Não Categorizado' = "grey")) +
+                                                         labs(title = "Percentual por Espectro", 
+                                                              x = "Espectros",
+                                                              y = "Percentual") + 
+                                                         geom_text(aes(label = Percentual, y = Percentual + 2)))
   
   output$DADOS_COMENTARIOS_CLASSIFICADOS <- renderDataTable(COMENTARIOS_CLASSIFICADOS)
   
