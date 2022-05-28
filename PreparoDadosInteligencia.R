@@ -26,6 +26,8 @@ NOMES_CORRETORAS <- read_delim("www/CONSUMO_CORRETORAS/nome_corretoras.csv",
                                delim = ",", escape_double = FALSE, 
                                trim_ws = TRUE)
 
+NOMES_CORRETORAS$cod_corretora <- substring(NOMES_CORRETORAS$nome_corretora, 0, 4)
+
 COMENTARIOS_CLASSIFICADOS <- read_delim("www/CLASSIFICADOR_NPS/comentarios_classificados.csv", 
                                         delim = ",", escape_double = FALSE, 
                                         trim_ws = TRUE)

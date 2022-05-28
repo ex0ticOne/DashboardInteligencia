@@ -117,7 +117,7 @@ server <- function(input, output) {
                                                                  height = "600"))
   
   output$PLOT_CONSUMO_CORRETORAS <- renderUI(tags$iframe(seamless = "seamless", 
-                                                         src = paste0("CONSUMO_CORRETORAS/Projeção de Uso de Tickets - ", input$selecao_corretora, " - Mensal" , ".html"), 
+                                                         src = paste0("CONSUMO_CORRETORAS/", NOMES_CORRETORAS$cod_corretora[which(NOMES_CORRETORAS$nome_corretora == input$selecao_corretora)], " - Mensal.html"), 
                                                          width = "100%", 
                                                          height = "600"))
   
