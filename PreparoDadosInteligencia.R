@@ -18,6 +18,31 @@ DADOS_REGIOES <- read_delim("regioes_tarifacao.csv",
                             delim = ",", escape_double = FALSE, 
                             trim_ws = TRUE)
 
+SCORE_INADIMPLENCIA <- read_delim("www/SCORE_INADIMPLENTES/SCORE_INADIMPLENCIA.csv", 
+                            delim = ",", escape_double = FALSE, 
+                            trim_ws = TRUE)
+
+NOMES_CORRETORAS <- read_delim("www/CONSUMO_CORRETORAS/nome_corretoras.csv", 
+                               delim = ",", escape_double = FALSE, 
+                               trim_ws = TRUE)
+
+COMENTARIOS_CLASSIFICADOS <- read_delim("www/CLASSIFICADOR_NPS/comentarios_classificados.csv", 
+                                        delim = ",", escape_double = FALSE, 
+                                        trim_ws = TRUE)
+
+lista_corretoras <- as.factor(NOMES_CORRETORAS$nome_corretora)
+
+TOP10_INADIMPLENTES_CLIENTES <- SCORE_INADIMPLENCIA %>% 
+  filter(cliente_regula == 1) %>%
+  top_n(chance_inadimplencia, n = 10) %>%
+  arrange(desc(chance_inadimplencia)) %>%
+  select(raiz_cnpj, unidade, dv, razao_social, chance_inadimplencia)
+
+POSSIVEIS_INADIMPLENTES_MERCADO <- SCORE_INADIMPLENCIA %>%
+  filter(cliente_regula == 0) %>%
+  arrange(desc(chance_inadimplencia)) %>%
+  select(raiz_cnpj, unidade, dv, razao_social, chance_inadimplencia)
+
 DADOS_RAMOS$coramo <- as.numeric(DADOS_RAMOS$coramo)
 
 lista_ramos <- data.frame(table(DADOS_RAMOS$nome_ramo))
