@@ -67,7 +67,7 @@ source('PreparoDadosInteligencia.R')
               tabItem(tabName = "RESUMO_CLASSIFICACAO", 
                       plotOutput("PLOT_RESUMO_CLASSIFICACAO", 
                                  width = "100%", 
-                                 height = "600"))
+                                 height = "800"))
               )
             ) 
         
@@ -91,13 +91,13 @@ server <- function(input, output) {
   output$selecao_corretora <- renderUI(selectInput("selecao_corretora", label = "Selecione a Corretora", choices = lista_corretoras))
   
   output$PLOT_PROJECAO_NACIONAL <- renderUI(tags$iframe(seamless = "seamless", 
-                                                        src = paste0("PROJECOES_SINISTRALIDADE/RESULTADOS_NACIONAL/Projeção de Sinistralidade - ", input$selecao_ramo, " - Nacional.html"), 
+                                                        src = paste0("PROJECOES_SINISTRALIDADE/RESULTADOS_NACIONAL/", DADOS_RAMOS$coramo[which(DADOS_RAMOS$nome_ramo == input$selecao_ramo)], " - Nacional.html"), 
                                                         width = "100%", 
                                                         height = "600"))
   
   
   output$PLOT_PROJECAO_UF <- renderUI(tags$iframe(seamless = "seamless", 
-                                          src = paste0("PROJECOES_SINISTRALIDADE/RESULTADOS_UF/Projeção de Sinistralidade - ", input$selecao_ramo, " - ", input$selecao_UF_sinistralidade, ".html"), 
+                                          src = paste0("PROJECOES_SINISTRALIDADE/RESULTADOS_UF/", DADOS_RAMOS$coramo[which(DADOS_RAMOS$nome_ramo == input$selecao_ramo)], " - ", input$selecao_UF_sinistralidade, ".html"), 
                                           width = "100%", 
                                           height = "600"))
   
@@ -134,7 +134,8 @@ server <- function(input, output) {
                                                          labs(title = "Percentual por Espectro", 
                                                               x = "Espectros",
                                                               y = "Percentual") + 
-                                                         geom_text(aes(label = Percentual, y = Percentual + 2)))
+                                                         geom_text(aes(label = Percentual, y = Percentual + 2)) + 
+                                                         theme(text = element_text(size = 20)))
   
   output$DADOS_COMENTARIOS_CLASSIFICADOS <- renderDataTable(COMENTARIOS_CLASSIFICADOS)
   
