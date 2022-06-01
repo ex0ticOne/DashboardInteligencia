@@ -6,7 +6,7 @@ source('PreparoDadosInteligencia.R')
 #UI
   estilo <- tags$head(tags$style(HTML(".shiny-output-error-validation {color: black;font-size: 30px; text-align: center; font-weight: bold;}")))
 
-  cabecalho <- dashboardHeader(title = "Dashboard de Inteligência em Sinistros", titleWidth = "500")
+  cabecalho <- dashboardHeader(title = "Dashboard de Inteligência", titleWidth = "300")
 
   lateral <- dashboardSidebar(
     sidebarMenu(menuItem("Consumo de Tickets", 
