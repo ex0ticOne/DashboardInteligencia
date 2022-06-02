@@ -1,7 +1,6 @@
 library(shiny)
 library(ggplot2)
 library(shinydashboard)
-library(prophet)
 library(htmltools)
 library(readr)
 library(dplyr)

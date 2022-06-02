@@ -8,19 +8,19 @@ source('PreparoDadosInteligencia.R')
 
   cabecalho <- dashboardHeader(title = "Dashboard de Inteligência", titleWidth = "300")
 
-  lateral <- dashboardSidebar(
-    sidebarMenu(menuItem("Consumo de Tickets", 
+  lateral <- dashboardSidebar(img(src = 'logo_regula.png', height = 250, width = 300),
+    sidebarMenu(menuItem("Projeções de Consumo de Tickets", 
                   uiOutput("selecao_corretora"),
                   menuSubItem("Por Corretora", tabName = "PROJECAO_CONSUMO_CORRETORAS"), startExpanded = TRUE),
-                menuItem("Sinistralidade",
+                menuItem("Projeções de Sinistralidade",
                   uiOutput("selecao_ramo"),
                   menuSubItem("Nacional", tabName = "PROJECOES_NACIONAL"),
                   uiOutput("selecao_UF_sinistralidade"),
                   menuSubItem("Por UF", tabName = "PROJECOES_UF"), startExpanded = FALSE),
-                menuItem("Abertura de Corretoras", 
+                menuItem("Projeção de Abertura de Corretoras", 
                         uiOutput("selecao_UF_corretoras"),
                         menuSubItem("Por UF", tabName = "ABERTURA_CORRETORAS_UF"), startExpanded = FALSE),
-                menuItem("Acionamento de Seguro Auto",
+                menuItem("Projeção de Quantidade de Seguro Auto",
                   uiOutput("selecao_cobertura"),
                   uiOutput("selecao_UF_seguroauto"),
                   menuSubItem("Por UF", tabName = "ACIONAMENTO_SEGURO_AUTO_UF"), 
@@ -31,7 +31,9 @@ source('PreparoDadosInteligencia.R')
                          menuSubItem("No mercado", tabName = "SCORE_INADIMPLENTES_EXTERNO"), startExpanded = FALSE),
                 menuItem("Sentimento do Segurado", 
                          menuSubItem("Resultados em lista", tabName = "DADOS_COMENTARIOS_CLASSIFICADOS"),
-                         menuSubItem("Resumo Compilado", tabName = "RESUMO_CLASSIFICACAO"))))
+                         menuSubItem("Resumo Compilado", tabName = "RESUMO_CLASSIFICACAO"),
+                         menuSubItem("Nuvem de Palavras Positivas", tabName = "NUVEM_PALAVRAS_POSITIVAS"),
+                         menuSubItem("Nuvem de Palavras Negativas", tabName = "NUVEM_PALAVRAS_NEGATIVAS"))), width = 300)
 
   corpo <- dashboardBody(estilo,
             tabItems(
@@ -67,7 +69,13 @@ source('PreparoDadosInteligencia.R')
               tabItem(tabName = "RESUMO_CLASSIFICACAO", 
                       plotOutput("PLOT_RESUMO_CLASSIFICACAO", 
                                  width = "100%", 
-                                 height = "800"))
+                                 height = "800")),
+              tabItem(tabName = "NUVEM_PALAVRAS_POSITIVAS", 
+                      titlePanel("O que os segurados estão dizendo de POSITIVO sobre a Regula Sinistros?"), 
+                      htmlOutput("NUVEM_POSITIVA")),
+              tabItem(tabName = "NUVEM_PALAVRAS_NEGATIVAS", 
+                      titlePanel("O que os segurados estão dizendo de NEGATIVO sobre a Regula Sinistros?"),
+                      htmlOutput("NUVEM_NEGATIVA"))
               )
             ) 
         
@@ -138,6 +146,16 @@ server <- function(input, output) {
                                                          theme(text = element_text(size = 20)))
   
   output$DADOS_COMENTARIOS_CLASSIFICADOS <- renderDataTable(COMENTARIOS_CLASSIFICADOS)
+  
+  output$NUVEM_POSITIVA <- renderUI(tags$iframe(seamless = "seamless", 
+                                                src = paste0("CLASSIFICADOR_NPS/nuvem_positiva.png"), 
+                                                width = "100%", 
+                                                height = "900"))
+  
+  output$NUVEM_NEGATIVA <- renderUI(tags$iframe(seamless = "seamless", 
+                                                src = paste0("CLASSIFICADOR_NPS/nuvem_negativa.png"), 
+                                                width = "100%", 
+                                                height = "900"))
   
   output$DADOS_INADIMPLENTES_INTERNO <- renderDataTable(TOP10_INADIMPLENTES_CLIENTES)
   
